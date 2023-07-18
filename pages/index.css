@@ -51,7 +51,7 @@
 
 .profile__info-name {
   font-size: 42px;
-  line-height: 48px;
+  line-height: 1.14; /* 48px */
   font-weight: 500;
   grid-area: title;
   margin: 0;
@@ -59,7 +59,7 @@
 
 .profile__info-description {
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.2; /* 22px */
   font-weight: 400;
   grid-area: description;
   margin: 0;
@@ -74,13 +74,16 @@
   height: 24px;
   width: 24px;
   grid-area: button;
+  transform: translate(10px, 10px);
+  border: none;
 }
 
 .profile__add-button {
   background: transparent url(../images/add-icon.svg) center no-repeat;
-  width: 150px;
+  min-width: 150px;
   height: 50px;
   margin-left: auto;
+  border: none;
 }
 
 .cards {
@@ -92,23 +95,23 @@
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  border-radius: 10px;
 }
 
 .card__list {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, 282px);
-  grid-gap: 20px 17px; /* 20px 18px? */
+  grid-gap: 20px 17px;
   padding: 0;
   margin: 0;
-  /* list-style-type: none; */
+  list-style-type: none;
 }
 
 .card__image {
   width: 282px;
   height: 282px;
-  /* border-radius: 10px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .card__description {
@@ -118,13 +121,14 @@
   padding: 25px 20px;
   align-items: center;
   justify-content: space-between;
-  /* border-radius: 10px; */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .card__description-locale {
   font-size: 24px;
   font-weight: 900;
-  line-height: 29px;
+  line-height: 1.2;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -135,6 +139,7 @@
   background: transparent url(../images/like-active.svg) center no-repeat;
   width: 21px;
   height: 18px;
+  border: none;
 }
 
 .footer {
@@ -144,7 +149,7 @@
 .footer__copyright {
   font-family: "Inter", Arial, sans-serif;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 1.2;
   font-weight: 400;
   color: #545454;
 }
@@ -161,14 +166,28 @@
   }
   .profile,
   .footer {
-    margin-top: 0; /* Maintains margin through query transition */
+    margin-top: 0;
     max-width: 880px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 936px) {
+  .page__section {
+    max-width: calc(100% - 40px);
+  }
+  .profile__info {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 637px) {
   .profile {
     flex-direction: column;
+  }
+
+  .profile__image {
+    margin-right: 0;
+    margin-bottom: 30px;
   }
 
   .profile__info {
@@ -176,6 +195,17 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    margin-right: 0;
+  }
+
+  .profile__info-name {
+    margin-bottom: 14px;
+  }
+
+  .profile__info-description {
+    margin-bottom: 36px;
+    width: 100%;
+    text-align: center;
   }
 
   .profile__description {
@@ -183,14 +213,35 @@
     text-align: center;
   }
 
+  .profile__edit-button {
+    padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    transform: none;
+  }
+
   .profile__add-button {
     margin: 0;
     width: 100%;
+    max-width: 282px;
   }
 }
 
-/* desk-top size max-width: 880px;
-mobile size min-width: 320px;
+@media screen and (max-width: 480px) {
+  .header__logo {
+    height: 24px;
+    width: 126px;
+  }
 
-media query between 700-800, and another 400-500px
- */
+  .profile__info-name {
+    font-size: 22px;
+  }
+
+  .profile__description {
+    font-size: 14px;
+  }
+
+  .footer__copyright {
+    font-size: 14px;
+  }
+}
