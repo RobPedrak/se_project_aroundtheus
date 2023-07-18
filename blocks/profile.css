@@ -49,6 +49,14 @@
   grid-area: button;
   transform: translate(10px, 10px);
   border: none;
+
+  position: relative;
+  transition: background-color 0.4s ease;
+}
+
+.profile__edit_button:hover {
+  z-index: 1;
+  background-color: red;
 }
 
 .profile__add_button {
@@ -57,4 +65,12 @@
   height: 50px;
   margin-left: auto;
   border: none;
+
+  position: relative;
+  transition: background-color 0.4s ease;
+}
+
+.profile__add_button:hover {
+  z-index: 1;
+  background-color: red;
 }
