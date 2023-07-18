@@ -37,7 +37,7 @@
   border-bottom-right-radius: 10px;
 }
 
-.card__description-locale {
+.card__description_locale {
   font-size: 24px;
   font-weight: 900;
   line-height: 1.2;
@@ -47,7 +47,7 @@
   margin: 0;
 }
 
-.card__like-button {
+.card__like_button {
   background: transparent url(../images/like-active.svg) center no-repeat;
   width: 21px;
   height: 18px;

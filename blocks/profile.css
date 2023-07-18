@@ -22,7 +22,7 @@
   grid-template-columns: minmax(auto, 373px) auto;
 }
 
-.profile__info-name {
+.profile__info_name {
   font-size: 42px;
   line-height: 1.14; /* 48px */
   font-weight: 500;
@@ -30,7 +30,7 @@
   margin: 0;
 }
 
-.profile__info-description {
+.profile__info_description {
   font-size: 18px;
   line-height: 1.2; /* 22px */
   font-weight: 400;
@@ -42,7 +42,7 @@
   max-width: 60%;
 }
 
-.profile__edit-button {
+.profile__edit_button {
   background: transparent url(../images/edit-button.svg) center no-repeat;
   height: 24px;
   width: 24px;
@@ -51,7 +51,7 @@
   border: none;
 }
 
-.profile__add-button {
+.profile__add_button {
   background: transparent url(../images/add-icon.svg) center no-repeat;
   min-width: 150px;
   height: 50px;

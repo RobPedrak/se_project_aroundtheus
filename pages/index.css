@@ -56,11 +56,11 @@
     margin-right: 0;
   }
 
-  .profile__info-name {
+  .profile__info_name {
     margin-bottom: 14px;
   }
 
-  .profile__info-description {
+  .profile__info_description {
     margin-bottom: 36px;
     width: 100%;
     text-align: center;
@@ -71,14 +71,14 @@
     text-align: center;
   }
 
-  .profile__edit-button {
+  .profile__edit_button {
     padding: 0;
     margin-left: 10px;
     margin-right: 10px;
     transform: none;
   }
 
-  .profile__add-button {
+  .profile__add_button {
     margin: 0;
     width: 100%;
     max-width: 282px;
@@ -91,11 +91,11 @@
     width: 126px;
   }
 
-  .profile__info-name {
+  .profile__info_name {
     font-size: 22px;
   }
 
-  .profile__info-description,
+  .profile__info_description,
   .footer__copyright {
     font-size: 14px;
   }
