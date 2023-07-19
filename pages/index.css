@@ -52,7 +52,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
+    width: calc(100% - 44px); /* subtracts the width of edit-button */
     margin-right: 0;
   }
 
