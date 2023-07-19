@@ -45,9 +45,10 @@
   white-space: nowrap;
   overflow: hidden;
   margin: 0;
+  padding: 0;
 }
 
-.card__like_button {
+.card__like-button {
   background: transparent url(../images/like-active.svg) center no-repeat;
   width: 21px;
   height: 18px;
@@ -57,7 +58,7 @@
   transition: background-color 0.4s ease;
 }
 
-.card__like_button:hover {
+.card__like-button:hover {
   z-index: 1;
   background-color: red; /* fill: red; doesn't work on non-inline SVG :( */
 }

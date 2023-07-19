@@ -20,7 +20,7 @@
     max-width: calc(100% - 40px); /* "sticky elements" */
   }
   .header {
-    max-width: 880px; /* max-width present in .header selector, but increases anyways at 1100px threshold */
+    max-width: 880px;
   }
   .profile,
   .footer {
@@ -71,14 +71,14 @@
     text-align: center;
   }
 
-  .profile__edit_button {
+  .profile__edit-button {
     padding: 0;
     margin-left: 10px;
     margin-right: 10px;
     transform: none;
   }
 
-  .profile__add_button {
+  .profile__add-button {
     margin: 0;
     width: 100%;
     max-width: 282px;
