@@ -22,7 +22,7 @@
   grid-template-columns: minmax(auto, 373px) auto;
 }
 
-.profile__info_name {
+.profile__name {
   font-size: 42px;
   line-height: 1.14; /* 48px */
   font-weight: 500;
@@ -30,7 +30,7 @@
   margin: 0;
 }
 
-.profile__info_description {
+.profile__description {
   font-size: 18px;
   line-height: 1.2; /* 22px */
   font-weight: 400;
@@ -111,11 +111,11 @@
     margin-right: 0;
   }
 
-  .profile__info_name {
+  .profile__name {
     margin-bottom: 14px;
   }
 
-  .profile__info_description {
+  .profile__description {
     margin-bottom: 36px;
     width: 100%;
     text-align: center;
@@ -141,11 +141,11 @@
 }
 
 @media screen and (max-width: 480px) {
-  .profile__info_name {
+  .profile__name {
     font-size: 22px;
   }
 
-  .profile__info_description {
+  .profile__description {
     font-size: 14px;
   }
 }
