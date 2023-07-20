@@ -121,11 +121,6 @@
     text-align: center;
   }
 
-  .profile__description {
-    width: 100%;
-    text-align: center;
-  }
-
   .profile__edit-button {
     padding: 0;
     margin-left: 10px;
