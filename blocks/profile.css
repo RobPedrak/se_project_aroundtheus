@@ -83,13 +83,13 @@
 }
 
 @media screen and (max-width: 936px) {
-  .profile__info {
-    margin-right: 20px;
-  }
   .profile {
     width: calc(
       100% - 44px
     ); /* subtracts the width of edit-button + its margins */
+  }
+  .profile__info {
+    margin-right: 20px;
   }
 }
 
@@ -136,7 +136,7 @@
   .profile__add-button {
     margin: 0;
     width: 100%;
-    max-width: 282px;
+    max-width: 150px;
   }
 }
 
