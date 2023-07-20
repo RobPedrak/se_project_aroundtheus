@@ -8,7 +8,9 @@
 
 @import url(../blocks/profile.css);
 
-@import url(../blocks/cards.css);
+@import url(../blocks/gallery.css);
+
+@import url(../blocks/card.css);
 
 @import url(../blocks/footer.css);
 
@@ -52,7 +54,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: calc(100% - 44px); /* subtracts the width of edit-button */
+    width: calc(
+      100% - 44px
+    ); /* subtracts the width of edit-button + its margins */
     margin-right: 0;
   }
 
