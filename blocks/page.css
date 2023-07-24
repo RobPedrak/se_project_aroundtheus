@@ -25,9 +25,3 @@
     max-width: calc(100% - 40px); /* "sticky elements" */
   }
 }
-
-@media screen and (max-width: 936px) {
-  .page__section {
-    max-width: calc(100% - 40px);
-  }
-}

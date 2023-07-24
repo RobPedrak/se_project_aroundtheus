@@ -13,3 +13,8 @@
 @import url(../blocks/card.css);
 
 @import url(../blocks/footer.css);
+
+/*
+* {
+  border: 1px solid red;
+} */

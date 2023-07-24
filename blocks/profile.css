@@ -28,6 +28,10 @@
   font-weight: 500;
   grid-area: title;
   margin: 0;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__description {
@@ -36,10 +40,11 @@
   font-weight: 400;
   grid-area: description;
   margin: 0;
+  max-width: 60%;
+
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 60%;
 }
 
 .profile__edit-button {
@@ -50,35 +55,43 @@
   transform: translate(10px, 10px);
   border: none;
 
+  opacity: 1;
   position: relative;
-  transition: background-color 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 
 .profile__edit-button:hover {
   z-index: 1;
-  background-color: #2f80ed;
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 .profile__add-button {
   background: transparent url(../images/add-icon.svg) center no-repeat;
-  min-width: 150px;
+  width: 150px;
   height: 50px;
   margin-left: auto;
-  border: none;
+  border: 2px solid white;
 
+  opacity: 1;
   position: relative;
-  transition: background-color 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 
 .profile__add-button:hover {
   z-index: 1;
-  background-color: #2f80ed;
+  cursor: pointer;
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 1100px) {
   .profile {
     margin-top: 0;
     max-width: 880px;
+  }
+
+  .profile__edit-button {
+    flex-wrap: nowrap;
   }
 }
 
@@ -90,6 +103,12 @@
   }
   .profile__info {
     margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .profile__add-button {
+    width: 50px;
   }
 }
 
@@ -107,7 +126,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: calc(100% - 44px);
+    width: calc(100% - 12px);
     margin-right: 0;
   }
 
@@ -124,14 +143,13 @@
   .profile__edit-button {
     padding: 0;
     margin-left: 10px;
-    margin-right: 10px;
     transform: none;
   }
 
   .profile__add-button {
     margin: 0;
     width: 100%;
-    max-width: 150px;
+    max-width: 282px;
   }
 }
 

@@ -39,11 +39,13 @@
   height: 18px;
   border: none;
 
-  position: relative; /* for hover state overlay */
-  transition: background-color 0.4s ease;
+  opacity: 1;
+  position: relative;
+  transition: opacity 0.4s ease;
 }
 
 .card__like-button:hover {
   z-index: 1;
-  background-color: red; /* fill: red; doesn't work on non-inline SVG :( */
+  cursor: pointer;
+  opacity: 0.5;
 }
