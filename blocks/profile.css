@@ -53,7 +53,7 @@
   width: 24px;
   grid-area: button;
   transform: translate(10px, 10px);
-  border: none;
+  border: 1px solid white;
 
   opacity: 1;
   position: relative;
@@ -63,7 +63,7 @@
 .profile__edit-button:hover {
   z-index: 1;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .profile__add-button {
@@ -81,7 +81,7 @@
 .profile__add-button:hover {
   z-index: 1;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 1100px) {
@@ -160,5 +160,11 @@
 
   .profile__description {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__edit-button {
+    transform: scale(0.75);
   }
 }
