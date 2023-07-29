@@ -19,7 +19,7 @@
   grid-template-areas:
     "title button"
     "description description";
-  grid-template-columns: minmax(auto, 373px) auto;
+  grid-template-columns: minmax(auto, 373px) 34px;
 }
 
 .profile__name {
@@ -40,7 +40,7 @@
   font-weight: 400;
   grid-area: description;
   margin: 0;
-  max-width: 60%;
+  max-width: 100%;
 
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -68,7 +68,7 @@
 
 .profile__add-button {
   background: transparent url(../images/add-icon.svg) center no-repeat;
-  width: 150px;
+  min-width: 150px;
   height: 50px;
   margin-left: auto;
   border: 2px solid white;
@@ -98,7 +98,7 @@
 @media screen and (max-width: 936px) {
   .profile {
     width: calc(
-      100% - 44px
+      100% - 34px
     ); /* subtracts the width of edit-button + its margins */
   }
   .profile__info {
@@ -108,7 +108,7 @@
 
 @media screen and (max-width: 772px) {
   .profile__add-button {
-    width: 50px;
+    min-width: 50px;
   }
 }
 
@@ -122,6 +122,11 @@
     margin-bottom: 30px;
   }
 
+  .profile__name {
+    margin-bottom: 14px;
+    max-width: calc(100% - 34px);
+  }
+
   .profile__info {
     display: flex;
     flex-wrap: wrap;
@@ -130,14 +135,11 @@
     margin-right: 0;
   }
 
-  .profile__name {
-    margin-bottom: 14px;
-  }
-
   .profile__description {
     margin-bottom: 36px;
-    width: 100%;
+    max-width: 85%;
     text-align: center;
+    flex-basis: 100%;
   }
 
   .profile__edit-button {
