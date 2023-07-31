@@ -24,7 +24,7 @@
 
 .profile__name {
   font-size: 42px;
-  line-height: 1.14; /* 48px */
+  line-height: 1.14;
   font-weight: 500;
   grid-area: title;
   margin: 0;
@@ -36,7 +36,7 @@
 
 .profile__description {
   font-size: 18px;
-  line-height: 1.2; /* 22px */
+  line-height: 1.2;
   font-weight: 400;
   grid-area: description;
   margin: 0;
@@ -72,6 +72,7 @@
   height: 50px;
   margin-left: auto;
   border: 2px solid white;
+  border-radius: 2px;
 
   opacity: 1;
   position: relative;
@@ -97,9 +98,7 @@
 
 @media screen and (max-width: 936px) {
   .profile {
-    width: calc(
-      100% - 34px
-    ); /* subtracts the width of edit-button + its margins */
+    width: calc(100% - 34px);
   }
   .profile__info {
     margin-right: 20px;
