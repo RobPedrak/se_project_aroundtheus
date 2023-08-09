@@ -98,7 +98,7 @@
 
 @media screen and (max-width: 936px) {
   .profile {
-    width: calc(100% - 34px);
+    width: calc(100% - 40px);
   }
   .profile__info {
     margin-right: 20px;

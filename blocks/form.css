@@ -11,6 +11,10 @@
   margin-bottom: 0;
 }
 
+.form__input[type="text"]:focus {
+  outline-color: rgba(47, 128, 237, 1);
+}
+
 @media screen and (max-width: 637px) {
   .form__input {
     box-sizing: border-box;
