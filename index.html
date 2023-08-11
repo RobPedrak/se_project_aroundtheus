@@ -29,14 +29,16 @@
             class="profile__image"
           />
           <div class="profile__info">
-            <h1 class="profile__name">Jacques Cousteau</h1>
+            <h1 class="profile__name" id="js-profile-name">Jacques Cousteau</h1>
             <button
               class="profile__edit-button"
-              id="profile-edit-button"
+              id="js-profile-edit-button"
               type="button"
               aria-label="Edit Profile"
             ></button>
-            <p class="profile__description">Explorer</p>
+            <p class="profile__description" id="js-profile-description">
+              Explorer
+            </p>
           </div>
           <button
             class="profile__add-button"
@@ -145,26 +147,28 @@
       <p class="footer__copyright">© 2023 Robert Pedrak</p>
     </footer>
 
-    <div class="modal" id="profile-edit-modal">
+    <div class="modal" id="js-profile-edit-modal">
       <div class="modal__container">
         <button
           class="modal__close"
-          id="profile-close-modal-button"
+          id="js-profile-close-modal-button"
           type="button"
         ></button>
         <h2 class="modal__heading">Edit profile</h2>
         <form class="modal__form form">
           <input
             class="form__input"
+            name="name"
             type="text"
-            id="name"
+            id="js-profile-name-input"
             placeholder="Name"
             required
           />
           <input
             class="form__input"
+            name="description"
             type="text"
-            id="description"
+            id="js-profile-description-input"
             placeholder="Description"
             required
           />

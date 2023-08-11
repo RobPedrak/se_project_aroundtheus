@@ -25,16 +25,36 @@ const initialCards = [
   },
 ];
 
-const profileEditButton = document.querySelector("#profile-edit-button");
-const profileEditModal = document.querySelector("#profile-edit-modal");
+const profileEditButton = document.querySelector("#js-profile-edit-button");
+const profileEditModal = document.querySelector("#js-profile-edit-modal");
 const profileCloseModalButton = document.querySelector(
-  "#profile-close-modal-button"
+  "#js-profile-close-modal-button"
 );
+const profileName = document.querySelector("#js-profile-name");
+const profileDescription = document.querySelector("#js-profile-description");
+const profileNameInput = document.querySelector("#js-profile-name-input");
+const profileDescriptionInput = document.querySelector(
+  "#js-profile-description-input"
+);
+const profileEditForm = profileEditModal.querySelector(".modal__form");
+
+function closePopup() {
+  profileEditModal.classList.remove("modal_opened");
+}
 
 profileEditButton.addEventListener("click", () => {
+  profileNameInput.value = profileName.textContent;
+  profileDescriptionInput.value = profileDescription.innerText;
   profileEditModal.classList.add("modal_opened");
 });
 
 profileCloseModalButton.addEventListener("click", () => {
-  profileEditModal.classList.remove("modal_opened");
+  closePopup();
+});
+
+profileEditForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  profileName.textContent = profileNameInput.value;
+  profileDescription.innerText = profileDescriptionInput.value;
+  closePopup();
 });
