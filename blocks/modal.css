@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  padding: 0 19px; /* for responsive design, no affect on non-mobile */
+  padding: 0 19px;
   top: 0;
   right: 0;
   bottom: 0;
