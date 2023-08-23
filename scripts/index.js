@@ -36,13 +36,28 @@ const profileNameInput = document.querySelector("#js-profile-name-input");
 const profileDescriptionInput = document.querySelector(
   "#js-profile-description-input"
 );
+
+const galleryAddCardButton = document.querySelector(
+  "#js-gallery-add-card-button"
+);
+const galleryAddModal = document.querySelector("#js-gallery-add-modal");
+const galleryCloseModalButton = document.querySelector(
+  "#js-gallery-close-modal-button"
+);
+
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const galleryCardsEl = document.querySelector(".gallery__cards");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
-function closePopup() {
-  profileEditModal.classList.remove("modal_opened");
+const galleryAddForm = galleryAddModal.querySelector(".modal__form");
+
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -59,20 +74,35 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileName.textContent = profileNameInput.value;
   profileDescription.innerText = profileDescriptionInput.value;
-  closePopup();
+  closeModal(profileEditModal);
 }
 
-function handleProfileEditButtonClick() {
+function handleGalleryAddCardSubmit(e) {
+  e.preventDefault();
+  closeModal(galleryAddModal);
+}
+
+profileEditButton.addEventListener("click", () => {
+  openModal(profileEditModal);
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.innerText;
-  profileEditModal.classList.add("modal_opened");
-}
+});
 
-profileEditButton.addEventListener("click", handleProfileEditButtonClick);
-
-profileCloseModalButton.addEventListener("click", closePopup);
+profileCloseModalButton.addEventListener("click", () =>
+  closeModal(profileEditModal)
+);
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+
+galleryAddCardButton.addEventListener("click", () =>
+  openModal(galleryAddModal)
+);
+
+galleryCloseModalButton.addEventListener("click", () =>
+  closeModal(galleryAddModal)
+);
+
+galleryAddForm.addEventListener("submit", handleGalleryAddCardSubmit);
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);

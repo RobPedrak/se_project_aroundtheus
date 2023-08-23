@@ -42,6 +42,7 @@
           </div>
           <button
             class="profile__add-button"
+            id="js-gallery-add-card-button"
             type="button"
             aria-label="Add Profile"
           ></button>
@@ -79,6 +80,36 @@
             type="text"
             id="js-profile-description-input"
             placeholder="Description"
+            required
+          />
+          <button class="modal__button" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="js-gallery-add-modal">
+      <div class="modal__container">
+        <button
+          class="modal__close"
+          id="js-gallery-close-modal-button"
+          type="button"
+        ></button>
+        <h2 class="modal__heading">New place</h2>
+        <form class="modal__form form">
+          <input
+            class="form__input"
+            name="title"
+            type="text"
+            id="js-gallery-title-input"
+            placeholder="Title"
+            required
+          />
+          <input
+            class="form__input"
+            name="url"
+            type="text"
+            id="js-gallery-image-input"
+            placeholder="Image URL"
             required
           />
           <button class="modal__button" type="submit">Save</button>
