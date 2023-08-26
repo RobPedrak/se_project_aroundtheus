@@ -51,6 +51,8 @@ const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
 const galleryAddForm = galleryAddModal.querySelector(".modal__form");
+const galleryTitleInput = document.querySelector("#js-gallery-title-input");
+const galleryImageInput = document.querySelector("#js-gallery-image-input");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -70,18 +72,6 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
-function handleProfileEditSubmit(e) {
-  e.preventDefault();
-  profileName.textContent = profileNameInput.value;
-  profileDescription.innerText = profileDescriptionInput.value;
-  closeModal(profileEditModal);
-}
-
-function handleGalleryAddCardSubmit(e) {
-  e.preventDefault();
-  closeModal(galleryAddModal);
-}
-
 profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
   profileNameInput.value = profileName.textContent;
@@ -92,7 +82,14 @@ profileCloseModalButton.addEventListener("click", () =>
   closeModal(profileEditModal)
 );
 
-profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+profileEditForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  profileName.textContent = profileNameInput.value;
+  profileDescription.innerText = profileDescriptionInput.value;
+
+  closeModal(profileEditModal);
+});
 
 galleryAddCardButton.addEventListener("click", () =>
   openModal(galleryAddModal)
@@ -102,7 +99,23 @@ galleryCloseModalButton.addEventListener("click", () =>
   closeModal(galleryAddModal)
 );
 
-galleryAddForm.addEventListener("submit", handleGalleryAddCardSubmit);
+galleryAddForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newCardTitle = galleryTitleInput.value;
+  const newCardImage = galleryImageInput.value;
+
+  const newCardData = {
+    name: newCardTitle,
+    link: newCardImage,
+  };
+
+  const newCardElement = getCardElement(newCardData);
+
+  galleryCardsEl.prepend(newCardElement);
+
+  closeModal(galleryAddModal);
+});
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
