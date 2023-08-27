@@ -66,9 +66,24 @@ function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLocaleEl = cardElement.querySelector(".card__locale");
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
+
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.name;
   cardLocaleEl.textContent = cardData.name;
+
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("card__like-button_active");
+  });
+
+  // add event listener delete
+  // cardEl.remove();
+  // add event liseneer image
+  // open popup
+  // find image element inside popup
+  // replace src with cardData.link
+  // replace alt with card title
+
   return cardElement;
 }
 
