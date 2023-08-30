@@ -84,7 +84,7 @@
   opacity: 0.8;
 }
 
-.modal__image_preview_container {
+.modal__container-imagepreview {
   background-color: transparent;
   width: auto;
   height: auto;
@@ -96,12 +96,12 @@
   object-fit: cover;
 }
 
-.modal__image_preview {
+.modal__container-imageEl {
   max-width: 75vw;
   max-height: 75vh;
 }
 
-.modal__image_preview_caption {
+.modal__container-imageCaption {
   font-family: "Inter", Arial, sans-serif;
   font-size: 12px;
   line-height: 1.2;
@@ -139,7 +139,7 @@
   .modal__button {
     font-size: 14px;
   }
-  .modal__image_preview_container {
+  .modal__container-imagepreview {
     padding: 0;
   }
 }

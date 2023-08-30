@@ -50,7 +50,7 @@ const galleryImagePreviewModal = document.querySelector(
 const galleryImagePreviewModalButton = document.querySelector(
   "#js-gallery-img-preview-close-modal-button"
 );
-const previewCardImageEl = document.querySelector(".modal__image_preview");
+const previewCardImageEl = document.querySelector(".modal__container-imageEl");
 
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const galleryCardsEl = document.querySelector(".gallery__cards");
@@ -76,7 +76,7 @@ function getCardElement(cardData) {
   const cardLikeButton = cardElement.querySelector(".card__like-button");
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   const cardImageCaption = document.querySelector(
-    ".modal__image_preview_caption"
+    ".modal__container-imageCaption"
   );
 
   cardImageEl.src = cardData.link;
