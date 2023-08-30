@@ -50,7 +50,7 @@ const galleryImagePreviewModal = document.querySelector(
 const galleryImagePreviewModalButton = document.querySelector(
   "#js-gallery-img-preview-close-modal-button"
 );
-const previewCardImageEl = document.querySelector(".modal__image-preview");
+const previewCardImageEl = document.querySelector(".modal__image_preview");
 
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const galleryCardsEl = document.querySelector(".gallery__cards");
