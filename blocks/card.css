@@ -12,6 +12,10 @@
   border-top-right-radius: 10px;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__delete-button {
   background: transparent url(../images/delete-icon.svg) center no-repeat;
   width: 18px;

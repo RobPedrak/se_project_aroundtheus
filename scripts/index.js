@@ -44,6 +44,13 @@ const galleryAddModal = document.querySelector("#js-gallery-add-modal");
 const galleryCloseModalButton = document.querySelector(
   "#js-gallery-close-modal-button"
 );
+const galleryImagePreviewModal = document.querySelector(
+  "#js-gallery-img-preview-modal"
+);
+const galleryImagePreviewModalButton = document.querySelector(
+  "#js-gallery-img-preview-close-modal-button"
+);
+const previewCardImageEl = document.querySelector(".modal__image-preview");
 
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const galleryCardsEl = document.querySelector(".gallery__cards");
@@ -68,6 +75,9 @@ function getCardElement(cardData) {
   const cardLocaleEl = cardElement.querySelector(".card__locale");
   const cardLikeButton = cardElement.querySelector(".card__like-button");
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+  const cardImageCaption = cardElement.querySelector(
+    ".modal__image_preview_caption"
+  );
 
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.name;
@@ -81,12 +91,13 @@ function getCardElement(cardData) {
     cardElement.remove();
   });
 
-  // 12:25
-  // add event liseneer image
-  // open popup
-  // find image element inside popup
-  // replace src with cardData.link
-  // replace alt with card title
+  cardImageEl.addEventListener("click", () => {
+    openModal(galleryImagePreviewModal);
+    previewCardImageEl.src = cardData.link;
+    previewCardImageEl.alt = "${cardData.name}";
+    cardImageCaption.textContent = cardData.name;
+    // .textContent = null
+  });
 
   return cardElement;
 }
@@ -134,6 +145,10 @@ galleryAddForm.addEventListener("submit", (e) => {
   galleryCardsEl.prepend(newCardElement);
 
   closeModal(galleryAddModal);
+});
+
+galleryImagePreviewModalButton.addEventListener("click", () => {
+  closeModal(galleryImagePreviewModal);
 });
 
 initialCards.forEach((cardData) => {

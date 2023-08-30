@@ -6,13 +6,19 @@
   bottom: 0;
   left: 0;
   z-index: 999;
-  display: flex;
-  display: none;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s linear;
 }
 
 .modal_opened {
-  display: flex;
+  visibility: visible;
+  pointer-events: all;
+  opacity: 1;
+  transition-delay: 0s;
 }
 
 .modal__container {
@@ -68,6 +74,7 @@
   margin-top: 48px;
   background-color: #000;
   color: #fff;
+
   opacity: 1;
   transition: opacity 0.4s ease;
   cursor: pointer;
@@ -75,6 +82,31 @@
 
 .modal__button:hover {
   opacity: 0.8;
+}
+
+.modal__image_preview_container {
+  background-color: transparent;
+  max-width: 75vw;
+  max-height: 75vw;
+  width: auto;
+  height: auto;
+  display: flex;
+}
+
+/* selectors not BEM compliant, requires refactoring as well */
+.modal__image-preview {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.modal__image_preview_caption {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 637px) {
