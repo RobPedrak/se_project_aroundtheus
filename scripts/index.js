@@ -75,7 +75,7 @@ function getCardElement(cardData) {
   const cardLocaleEl = cardElement.querySelector(".card__locale");
   const cardLikeButton = cardElement.querySelector(".card__like-button");
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  const cardImageCaption = cardElement.querySelector(
+  const cardImageCaption = document.querySelector(
     ".modal__image_preview_caption"
   );
 
@@ -96,7 +96,6 @@ function getCardElement(cardData) {
     previewCardImageEl.src = cardData.link;
     previewCardImageEl.alt = "${cardData.name}";
     cardImageCaption.textContent = cardData.name;
-    // .textContent = null
   });
 
   return cardElement;

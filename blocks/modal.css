@@ -87,13 +87,14 @@
 .modal__image_preview_container {
   background-color: transparent;
   max-width: 75vw;
-  max-height: 75vw;
+  max-height: 75vh;
   width: auto;
   height: auto;
   display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 
-/* selectors not BEM compliant, requires refactoring as well */
 .modal__image-preview {
   max-width: 100%;
   max-height: 100%;
@@ -123,8 +124,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  .modal {
-  }
   .modal__container {
     padding: 25px 22px;
     width: calc(100% - 38px);
@@ -139,5 +138,8 @@
   }
   .modal__button {
     font-size: 14px;
+  }
+  .modal__image_preview_container {
+    padding: 0;
   }
 }
