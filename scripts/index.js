@@ -27,9 +27,6 @@ const initialCards = [
 
 const profileEditButton = document.querySelector("#js-profile-edit-button");
 const profileEditModal = document.querySelector("#js-profile-edit-modal");
-const profileCloseModalButton = document.querySelector(
-  "#js-profile-close-modal-button"
-);
 const profileName = document.querySelector("#js-profile-name");
 const profileDescription = document.querySelector("#js-profile-description");
 const profileNameInput = document.querySelector("#js-profile-name-input");
@@ -41,25 +38,26 @@ const galleryAddCardButton = document.querySelector(
   "#js-gallery-add-card-button"
 );
 const galleryAddModal = document.querySelector("#js-gallery-add-modal");
-const galleryCloseModalButton = document.querySelector(
-  "#js-gallery-close-modal-button"
-);
 const galleryImagePreviewModal = document.querySelector(
   "#js-gallery-img-preview-modal"
 );
-const galleryImagePreviewModalButton = document.querySelector(
-  "#js-gallery-img-preview-close-modal-button"
-);
 const previewCardImageEl = document.querySelector(".modal__container-imageEl");
 
-const profileEditForm = profileEditModal.querySelector(".modal__form");
+const profileEditForm = document.forms["profile-edit-form"];
 const galleryCardsEl = document.querySelector(".gallery__cards");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
 
-const galleryAddForm = galleryAddModal.querySelector(".modal__form");
+const galleryAddForm = document.forms["gallery-add-form"];
 const galleryTitleInput = document.querySelector("#js-gallery-title-input");
 const galleryImageInput = document.querySelector("#js-gallery-image-input");
+
+const closeModalButton = document.querySelectorAll(".modal__close");
+
+closeModalButton.forEach((button) => {
+  const modal = button.closest(".modal");
+  button.addEventListener("click", () => closeModal(modal));
+});
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -94,7 +92,7 @@ function getCardElement(cardData) {
   cardImageEl.addEventListener("click", () => {
     openModal(galleryImagePreviewModal);
     previewCardImageEl.src = cardData.link;
-    previewCardImageEl.alt = "${cardData.name}";
+    previewCardImageEl.alt = `${cardData.name}`;
     cardImageCaption.textContent = cardData.name;
   });
 
@@ -107,10 +105,6 @@ profileEditButton.addEventListener("click", () => {
   profileDescriptionInput.value = profileDescription.innerText;
 });
 
-profileCloseModalButton.addEventListener("click", () =>
-  closeModal(profileEditModal)
-);
-
 profileEditForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -122,10 +116,6 @@ profileEditForm.addEventListener("submit", (e) => {
 
 galleryAddCardButton.addEventListener("click", () =>
   openModal(galleryAddModal)
-);
-
-galleryCloseModalButton.addEventListener("click", () =>
-  closeModal(galleryAddModal)
 );
 
 galleryAddForm.addEventListener("submit", (e) => {
@@ -141,13 +131,11 @@ galleryAddForm.addEventListener("submit", (e) => {
 
   const newCardElement = getCardElement(newCardData);
 
+  galleryAddForm.reset();
+
   galleryCardsEl.prepend(newCardElement);
 
   closeModal(galleryAddModal);
-});
-
-galleryImagePreviewModalButton.addEventListener("click", () => {
-  closeModal(galleryImagePreviewModal);
 });
 
 initialCards.forEach((cardData) => {
