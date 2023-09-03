@@ -47,6 +47,9 @@ const profileEditForm = document.forms["profile-edit-form"];
 const galleryCardsEl = document.querySelector(".gallery__cards");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
+const cardImageCaption = document.querySelector(
+  ".modal__container-imageCaption"
+);
 
 const galleryAddForm = document.forms["gallery-add-form"];
 const galleryTitleInput = document.querySelector("#js-gallery-title-input");
@@ -73,9 +76,6 @@ function getCardElement(cardData) {
   const cardLocaleEl = cardElement.querySelector(".card__locale");
   const cardLikeButton = cardElement.querySelector(".card__like-button");
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  const cardImageCaption = document.querySelector(
-    ".modal__container-imageCaption"
-  );
 
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.name;
