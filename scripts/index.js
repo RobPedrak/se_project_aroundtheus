@@ -55,9 +55,9 @@ const galleryAddForm = document.forms["gallery-add-form"];
 const galleryTitleInput = document.querySelector("#js-gallery-title-input");
 const galleryImageInput = document.querySelector("#js-gallery-image-input");
 
-const closeModalButton = document.querySelectorAll(".modal__close");
+const closeModalButtons = document.querySelectorAll(".modal__close");
 
-closeModalButton.forEach((button) => {
+closeModalButtons.forEach((button) => {
   const modal = button.closest(".modal");
   button.addEventListener("click", () => closeModal(modal));
 });
