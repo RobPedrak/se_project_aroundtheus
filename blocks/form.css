@@ -7,15 +7,16 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding-bottom: 13px;
-  margin-bottom: 29px;
-}
-
-.form__input:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: 5px;
+  /* auto-complete by default turns form blue */
 }
 
 .form__input[type="text"]:focus {
   outline-color: rgba(47, 128, 237, 1);
+}
+
+.form__input_error {
+  border-bottom-color: #ff0000;
 }
 
 @media screen and (max-width: 637px) {
