@@ -22,21 +22,23 @@ function checkInputValidity(formEl, inputEl, options) {
 function hasInvalidInput(inputList) {
   return !inputList.every((inputEl) => inputEl.validity.valid);
 }
-// move 31-33 into it's own 2 functions
 
-// disableButton
-//  add class if disabled
-// enableButton
-// remove class if enabled
+function disableButton(submitButton, { inactiveButtonClass }) {
+  submitButton.classList.add(inactiveButtonClass);
+  submitButton.disabled = true;
+}
 
-function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  if (hasInvalidInput(inputEls)) {
-    submitButton.classList.add(inactiveButtonClass);
-    submitButton.disabled = true;
-    return;
-  }
+function enableButton(submitButton, { inactiveButtonClass }) {
   submitButton.classList.remove(inactiveButtonClass);
   submitButton.disabled = false;
+}
+
+function toggleButtonState(inputEls, submitButton, options) {
+  if (hasInvalidInput(inputEls)) {
+    disableButton(submitButton, options);
+    return;
+  }
+  enableButton(submitButton, options);
 }
 
 function setEventListeners(formEl, options) {
