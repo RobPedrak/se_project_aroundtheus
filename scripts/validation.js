@@ -75,5 +75,3 @@ const config = {
 };
 
 enableValidation(config);
-
-// both forms' heights change when modal__error added by function

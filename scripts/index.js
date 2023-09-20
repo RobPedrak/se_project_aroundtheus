@@ -55,6 +55,8 @@ const galleryAddForm = document.forms["gallery-add-form"];
 const galleryTitleInput = document.querySelector("#js-gallery-title-input");
 const galleryImageInput = document.querySelector("#js-gallery-image-input");
 
+const modalOverlays = document.querySelectorAll(".modal");
+
 const closeModalButtons = document.querySelectorAll(".modal__close");
 
 closeModalButtons.forEach((button) => {
@@ -136,6 +138,14 @@ galleryAddForm.addEventListener("submit", (e) => {
   galleryCardsEl.prepend(newCardElement);
 
   closeModal(galleryAddModal);
+});
+
+modalOverlays.forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal(modal);
+    }
+  });
 });
 
 initialCards.forEach((cardData) => {

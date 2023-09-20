@@ -123,8 +123,12 @@
   font-size: 12px;
   line-height: 1.2;
   color: #ff0000;
+  box-sizing: border-box;
+  padding-left: 2px;
   margin-bottom: 12px;
   max-width: 362px;
+  max-height: 14px;
+  z-index: 2;
 }
 
 .modal__error:last-of-type {
@@ -162,5 +166,8 @@
   }
   .modal__container-imagepreview {
     padding: 0;
+  }
+  .modal__error {
+    font-size: 10px;
   }
 }
