@@ -146,6 +146,11 @@ modalOverlays.forEach((modal) => {
       closeModal(modal);
     }
   });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal(modal);
+    }
+  });
 });
 
 initialCards.forEach((cardData) => {
