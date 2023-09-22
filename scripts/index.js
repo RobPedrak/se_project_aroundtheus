@@ -57,13 +57,6 @@ const galleryImageInput = document.querySelector("#js-gallery-image-input");
 
 const modalOverlays = document.querySelectorAll(".modal");
 
-const closeModalButtons = document.querySelectorAll(".modal__close");
-
-closeModalButtons.forEach((button) => {
-  const modal = button.closest(".modal");
-  button.addEventListener("click", () => closeModal(modal));
-});
-
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeByEscape);
@@ -80,6 +73,17 @@ function closeByEscape(evt) {
     closeModal(openedPopup);
   }
 }
+
+modalOverlays.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal_opened")) {
+      closeModal(modal);
+    }
+    if (evt.target.classList.contains("modal__close")) {
+      closeModal(modal);
+    }
+  });
+});
 
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -147,14 +151,6 @@ galleryAddForm.addEventListener("submit", (e) => {
   galleryCardsEl.prepend(newCardElement);
 
   closeModal(galleryAddModal);
-});
-
-modalOverlays.forEach((modal) => {
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      closeModal(modal);
-    }
-  });
 });
 
 initialCards.forEach((cardData) => {
