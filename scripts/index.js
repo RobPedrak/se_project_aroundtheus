@@ -66,10 +66,19 @@ closeModalButtons.forEach((button) => {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeByEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeByEscape);
+}
+
+function closeByEscape(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".modal_opened");
+    closeModal(openedPopup);
+  }
 }
 
 function getCardElement(cardData) {
@@ -143,11 +152,6 @@ galleryAddForm.addEventListener("submit", (e) => {
 modalOverlays.forEach((modal) => {
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {
-      closeModal(modal);
-    }
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
       closeModal(modal);
     }
   });
