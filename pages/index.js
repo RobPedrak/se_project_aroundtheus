@@ -1,3 +1,6 @@
+import Card from "/components/Card.js";
+import FormValidator from "../components/FormValidator.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -24,6 +27,14 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+
+const cardData = {
+  name: "",
+  link: "",
+};
+
+const card = new Card(cardData, "#card-template");
+card.getView();
 
 const profileEditButton = document.querySelector("#js-profile-edit-button");
 const profileEditModal = document.querySelector("#js-profile-edit-modal");
@@ -100,9 +111,9 @@ function getCardElement(cardData) {
     cardLikeButton.classList.toggle("card__like-button_active");
   });
 
-  cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
+  // cardDeleteButton.addEventListener("click", () => {
+  //   cardElement.remove();
+  // });
 
   cardImageEl.addEventListener("click", () => {
     openModal(galleryImagePreviewModal);
