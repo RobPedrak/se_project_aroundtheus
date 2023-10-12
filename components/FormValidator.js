@@ -35,9 +35,11 @@ class FormValidator {
 
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
+      console.log("Disabling button...");
       this.disableButton();
       return;
     }
+    console.log("Enabling button...");
     this.enableButton();
   }
 
@@ -92,5 +94,3 @@ const formValidator = new FormValidator(config, editForm, addForm);
 formValidator.enableValidation();
 
 export default FormValidator;
-
-// min 37

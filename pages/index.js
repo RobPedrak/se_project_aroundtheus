@@ -33,6 +33,7 @@ const cardData = {
   link: "",
 };
 
+// const cardSelector = "#card-template";
 const card = new Card(cardData, "#card-template");
 card.getView();
 
@@ -111,9 +112,9 @@ function getCardElement(cardData) {
     cardLikeButton.classList.toggle("card__like-button_active");
   });
 
-  // cardDeleteButton.addEventListener("click", () => {
-  //   cardElement.remove();
-  // });
+  cardDeleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
 
   cardImageEl.addEventListener("click", () => {
     openModal(galleryImagePreviewModal);
