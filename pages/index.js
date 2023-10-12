@@ -1,4 +1,5 @@
 import Card from "/components/Card.js";
+import { config } from "../components/FormValidator.js";
 import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
@@ -169,3 +170,11 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   galleryCardsEl.prepend(cardElement);
 });
+
+const formValidator = new FormValidator(
+  config,
+  profileEditForm,
+  galleryAddForm
+);
+
+formValidator.enableValidation();

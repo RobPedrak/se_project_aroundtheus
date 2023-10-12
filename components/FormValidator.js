@@ -93,4 +93,5 @@ const formValidator = new FormValidator(config, editForm, addForm);
 
 formValidator.enableValidation();
 
+export { config };
 export default FormValidator;

@@ -1,3 +1,36 @@
+const galleryImagePreviewModal = document.querySelector(
+  "#js-gallery-img-preview-modal"
+);
+const previewCardImageEl = document.querySelector(".modal__container-imageEl");
+const cardImageCaption = document.querySelector(
+  ".modal__container-imageCaption"
+);
+const modalOverlays = document.querySelectorAll(".modal");
+
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeByEscape);
+}
+
+function closeByEscape(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".modal_opened");
+    closeModal(openedPopup);
+  }
+}
+
+modalOverlays.forEach((modal) => {
+  modal.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("modal_opened")) {
+      closeModal(modal);
+    }
+    if (evt.target.classList.contains("modal__close")) {
+      closeModal(modal);
+    }
+  });
+});
+// above code temp. for Sprint 7
+
 class Card {
   constructor({ name, link }, cardSelector) {
     this._name = name;
@@ -61,5 +94,3 @@ class Card {
 }
 
 export default Card;
-
-// 1h min 8
